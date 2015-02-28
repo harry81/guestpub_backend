@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'django.contrib.gis',
     'cms',
     'menus',
     'sekizai',
@@ -137,8 +138,13 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_video',
+    'rest_framework',
+    'django_extensions',
+    'rest_framework',
+    'rest_framework_gis',
     'south',
     'reversion',
+    'guestpub',
     'dowant'
 )
 
@@ -177,6 +183,21 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
-    'default':
-        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''}
+    'default_bak':
+        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''},
+    'default': {
+    'ENGINE': 'django.contrib.gis.db.backends.postgis',
+    'NAME': 'guestpub',
+    'HOST': '127.0.0.1',
+    'USER': 'guestpub',
+    'PASSWORD': 'guestpub',
+    'PORT': ''}
 }
+
+REST_FRAMEWORK = {
+        'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+            'PAGINATE_BY': 10
+}
+
+POSTGIS_VERSION = (2, 1, 4)
+
