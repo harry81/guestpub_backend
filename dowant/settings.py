@@ -86,6 +86,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.doc.XViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
@@ -138,10 +139,10 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_video',
-    'rest_framework',
     'django_extensions',
     'rest_framework',
     'rest_framework_gis',
+    'corsheaders',
     'south',
     'reversion',
     'guestpub',
@@ -200,4 +201,4 @@ REST_FRAMEWORK = {
 }
 
 POSTGIS_VERSION = (2, 1, 4)
-
+ORS_ORIGIN_ALLOW_ALL = True
