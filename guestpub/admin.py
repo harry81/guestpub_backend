@@ -1,5 +1,5 @@
 from django.contrib import admin
-from guestpub.models import Pub
+from guestpub.models import Pub, Message
 
 
 class PubAdmin(admin.ModelAdmin):
@@ -13,3 +13,7 @@ class PubAdmin(admin.ModelAdmin):
 admin.site.register(Pub, PubAdmin)
 
 
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('sender_tel', 'receiver_tel', 'result')
+
+admin.site.register(Message, MessageAdmin)

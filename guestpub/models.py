@@ -1,6 +1,29 @@
 from datetime import datetime
 from django.contrib.gis.db import models
 from cms.models import CMSPlugin
+from guestpub.helpers import MessageGateway
+
+
+class Message(models.Model):
+    # customer
+    # accomodation
+    sender_tel = models.CharField(max_length=20, blank=True, default='')
+    receiver_tel = models.CharField(max_length=20, blank=True, default='')
+    result = models.BooleanField(default=False)
+    message = models.CharField(max_length=100, blank=True, default='')
+    created = models.DateTimeField(auto_now_add=True)
+
+    def send(self, sender, receiver, message):
+        gateway = MessageGateway()
+        self.sender = sender
+        self.receiver = receiver
+        self.message = message
+        self.result = gateway.send(sender, receiver, message)
+        self.save()
+        return True
+
+    def __unicode__(self):
+        return u'%s %s' % (self.pk, self.message)
 
 
 class Pub(models.Model):

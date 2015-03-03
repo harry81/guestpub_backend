@@ -1,9 +1,10 @@
 import json
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
-from guestpub.serializers import PubSerializer
+from guestpub.serializers import PubSerializer, MessageSerializer
 from rest_framework import generics
-from guestpub.models import Pub
+from guestpub.models import Pub, Message
 
 
 class PubList(generics.ListCreateAPIView):
@@ -18,10 +19,17 @@ class PubDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PubSerializer
 
 
-def send_message(request):
-    # coupon_code = request.POST['coupon_code']
-    # phone = request.POST['phone']
-    # email = request.POST['email']
-    email = {'name':'hello'}
-    return HttpResponse(json.dumps(email), content_type="application/json")
+class MessageList(generics.ListCreateAPIView):
+    permission_classes = ()
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
 
+
+class MessageDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = ()
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+
+    @csrf_exempt
+    def perform_create(self, serializer):
+        serializer.save(message=self.request.message)
