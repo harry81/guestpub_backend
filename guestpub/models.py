@@ -1,7 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from datetime import datetime
 from django.contrib.gis.db import models
 from cms.models import CMSPlugin
 from guestpub.helpers import MessageGateway
+
+import logging
+logger = logging.getLogger(__name__)
 
 
 class Message(models.Model):
@@ -10,10 +15,11 @@ class Message(models.Model):
     sender_tel = models.CharField(max_length=20, blank=True, default='')
     receiver_tel = models.CharField(max_length=20, blank=True, default='')
     username = models.CharField(max_length=20, blank=True, default='')
+    day = models.CharField(max_length=20, blank=True, default='')
     result = models.BooleanField(default=False)
-    num_men = models.IntegerField(default=0)
-    num_wemen= models.IntegerField(default=0)
-    num_children= models.IntegerField(default=0)
+    num_men = models.IntegerField(default=0, blank=True)
+    num_women= models.IntegerField(default=0, blank=True)
+    num_children= models.IntegerField(default=0, blank=True)
     message = models.CharField(max_length=256, blank=True, default='')
     created = models.DateTimeField(auto_now_add=True)
 
@@ -28,6 +34,11 @@ class Message(models.Model):
 
     def __unicode__(self):
         return u'%s %s' % (self.pk, self.message)
+
+    def save(self, *args, **kwargs):
+        self.message = u"안녕하세요 {day} {num_men}명 숙박 가능한가요?".format(**self.__dict__)
+        logger.error('hello')
+        super(Message, self).save(*args, **kwargs)
 
 
 class Pub(models.Model):

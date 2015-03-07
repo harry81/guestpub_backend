@@ -29,7 +29,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-APPEND_SLASH=False
+APPEND_SLASH=True
 
 # Application definition
 
