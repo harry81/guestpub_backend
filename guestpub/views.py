@@ -30,6 +30,3 @@ class MessageDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
 
-    @csrf_exempt
-    def perform_create(self, serializer):
-        serializer.save(message=self.request.message)

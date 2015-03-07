@@ -29,6 +29,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+APPEND_SLASH=False
 
 # Application definition
 
@@ -81,7 +82,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -102,12 +103,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
-    'django.core.context_processors.csrf',
+    #'django.core.context_processors.csrf',
     'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
     'django.core.context_processors.static',
     'cms.context_processors.cms_settings'
 )
+
+CSRF_COOKIE_SECURE = True
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'dowant', 'templates'),
@@ -196,9 +199,40 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
-        'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-            'PAGINATE_BY': 10
+        'DEFAULT_PERMISSION_CLASSES': (
+            'rest_framework.permissions.AllowAny',),
+            #'rest_framework.permissions.IsAdminUser',),
+         'PAGINATE_BY': 10
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/home/hoodpub/deploy/live/django.log',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+    'django': {
+        'handlers': ['console', 'mail_admins'],
+        'propagate': True,
+        'level': 'DEBUG',
+    },
 }
 
 POSTGIS_VERSION = (2, 1, 4)
 ORS_ORIGIN_ALLOW_ALL = True
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
