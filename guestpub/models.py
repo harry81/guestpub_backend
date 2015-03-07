@@ -9,8 +9,12 @@ class Message(models.Model):
     # accomodation
     sender_tel = models.CharField(max_length=20, blank=True, default='')
     receiver_tel = models.CharField(max_length=20, blank=True, default='')
+    username = models.CharField(max_length=20, blank=True, default='')
     result = models.BooleanField(default=False)
-    message = models.CharField(max_length=100, blank=True, default='')
+    num_men = models.IntegerField(default=0)
+    num_wemen= models.IntegerField(default=0)
+    num_children= models.IntegerField(default=0)
+    message = models.CharField(max_length=256, blank=True, default='')
     created = models.DateTimeField(auto_now_add=True)
 
     def send(self, sender, receiver, message):
