@@ -17,7 +17,7 @@ class PubSerializer(GeoFeatureModelSerializer):
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
-        fields = ('sender_tel', 'receiver_tel', 'result')
+        fields = ('sender_tel', 'receiver_tel', 'result','username', 'day', 'num_men', 'num_women', 'num_children')
 
     def __unicode__(self):
         return u'%s %s' % (self.id, self.sender_tel)
