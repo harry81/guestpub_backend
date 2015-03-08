@@ -36,7 +36,6 @@ APPEND_SLASH=True
 
 
 
-
 ROOT_URLCONF = 'dowant.urls'
 
 WSGI_APPLICATION = 'dowant.wsgi.application'
@@ -103,6 +102,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
+    'constance.context_processors.config',
     #'django.core.context_processors.csrf',
     'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'rest_framework_gis',
     'corsheaders',
     'south',
+    'constance',
     'reversion',
     'guestpub',
     'dowant'
@@ -185,18 +186,6 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
-
-DATABASES = {
-    'default_bak':
-        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''},
-    'default': {
-    'ENGINE': 'django.contrib.gis.db.backends.postgis',
-    'NAME': 'guestpub',
-    'HOST': '127.0.0.1',
-    'USER': 'guestpub',
-    'PASSWORD': 'guestpub',
-    'PORT': ''}
-}
 
 REST_FRAMEWORK = {
         'DEFAULT_PERMISSION_CLASSES': (
