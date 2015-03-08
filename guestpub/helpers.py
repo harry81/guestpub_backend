@@ -26,7 +26,8 @@ class MessageGateway():
         }
         data = json.dumps(value, ensure_ascii=False).encode('utf-8')
         c.request("POST", path, data, headers)
-        #r = c.getresponse()
-
-        return True
+        res = c.getresponse()
+        if res.status == 200:
+            return True
+        return False
 
