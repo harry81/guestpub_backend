@@ -18,7 +18,7 @@ class MessageGateway():
         if not config.ENABLE_SEND_SMS:
             return False
 
-        c = httplib.HTTPSConnection(settings.URL)
+        c = httplib.HTTPSConnection(settings.BLUEHOUSE_URL)
         value = {
             'sender'     : sender,
             'receivers'  : receiver,

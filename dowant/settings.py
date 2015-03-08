@@ -81,7 +81,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -103,14 +103,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'constance.context_processors.config',
-    #'django.core.context_processors.csrf',
+    'django.core.context_processors.csrf',
     'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
     'django.core.context_processors.static',
     'cms.context_processors.cms_settings'
 )
 
-CSRF_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'dowant', 'templates'),

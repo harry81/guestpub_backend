@@ -32,7 +32,7 @@ def message_list(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        serializer = MessageSerializer(data=request.POST)
+        serializer = MessageSerializer(data=request.DATA)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
