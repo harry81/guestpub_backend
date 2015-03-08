@@ -27,3 +27,7 @@ CONSTANCE_CONFIG = {
     'ENABLE_SEND_SMS': (False, u'문자 전송 여부 설정,'
                         u'True: 전송가능, False: 전송불가'),
 }
+
+BLUEHOUSE_APPID = 'guestpub'
+BLUEHOUSE_APIKEY = '8c1854a8635111e48910040113e09101'
+BLUEHOUSE_URL = 'api.bluehouselab.com'
