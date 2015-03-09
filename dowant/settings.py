@@ -201,7 +201,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/home/hoodpub/deploy/live/django.log',
+            'filename': 'django.log',
         },
     },
     'loggers': {

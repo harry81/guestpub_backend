@@ -6,9 +6,8 @@ class PubSerializer(GeoFeatureModelSerializer):
     class Meta:
         model = Pub
         geo_field = "point"
-        fields = ('refer_id', 'title',  'phone',
-                    'point', 'address', 'imageUrl',
-                    'category', 'placeUrl',
+        fields = ('refer_id', 'title',  'phone', 'address', 'imageurl',
+                    'category', 'placeurl',
                     )
 
     def __unicode__(self):
