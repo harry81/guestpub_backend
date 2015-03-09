@@ -55,6 +55,8 @@ class Pub(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-imageurl']
 
     def save(self, *args, **kwargs):
         kwargs['force_insert'] = not Pub.objects.filter(refer_id=self.refer_id).exists()
