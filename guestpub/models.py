@@ -36,7 +36,7 @@ class Message(models.Model):
         return u'%s %s' % (self.pk, self.message)
 
     def save(self, *args, **kwargs):
-        self.message = u"안녕하세요 {day}에 {num_men}명 숙박 가능한가요?".format(**self.__dict__)
+        self.message = u"안녕하세요 {day}에 남{num_men}명 여{num_women} 어린이 {num_children} 숙박 가능한가요?".format(**self.__dict__)
         msgGate = MessageGateway()
         #self.result = msgGate.send(self.sender_tel, [self.receiver_tel,], self.message)
         self.result = msgGate.send('01064117846', ['01064117846',], self.message)
