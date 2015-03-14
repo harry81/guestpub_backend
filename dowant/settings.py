@@ -51,7 +51,7 @@ WSGI_APPLICATION = 'dowant.wsgi.application'
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'south',
     'constance',
     'reversion',
+    'django_nose',
     'guestpub',
     'dowant'
 )
@@ -220,6 +221,7 @@ LOGGING = {
 
 POSTGIS_VERSION = (2, 1, 4)
 ORS_ORIGIN_ALLOW_ALL = True
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 try:
     from local_settings import *
