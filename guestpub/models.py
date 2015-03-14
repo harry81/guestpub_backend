@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-
 from datetime import datetime
 from django.contrib.gis.db import models
 from cms.models import CMSPlugin
-from guestpub.helpers import MessageGateway
+from guestpub.helpers import MessageGateway, PubScrapy
 
 import logging
 logger = logging.getLogger(__name__)
@@ -64,6 +63,10 @@ class Pub(models.Model):
             kwargs['update_fields'] = ['title', 'phone','address','imageUrl', 'category']
 
         super(Pub, self).save(*args, **kwargs) # Call the "real" save() method.
+
+    def get_review(self):
+        scrapy = PubScrapy()
+        reviews = scrapy.get_review(self.refer_id)
 
     def __unicode__(self):
         return u'%s %s' % (self.refer_id, self.title)
