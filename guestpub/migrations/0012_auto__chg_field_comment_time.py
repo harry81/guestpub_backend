@@ -10,12 +10,12 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
 
         # Changing field 'Comment.time'
-        db.alter_column(u'guestpub_comment', 'time', self.gf('django.db.models.fields.DateField')())
+        db.alter_column(u'guestpub_comment', 'time', self.gf('django.db.models.fields.DateField')(auto_now_add=True))
 
     def backwards(self, orm):
 
         # Changing field 'Comment.time'
-        db.alter_column(u'guestpub_comment', 'time', self.gf('django.db.models.fields.DateField')(auto_now_add=True))
+        db.alter_column(u'guestpub_comment', 'time', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True))
 
     models = {
         'cms.cmsplugin': {
@@ -48,7 +48,7 @@ class Migration(SchemaMigration):
             'name': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '32', 'blank': 'True'}),
             'num_rate': ('django.db.models.fields.IntegerField', [], {'blank': 'True'}),
             'pub': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['guestpub.Pub']"}),
-            'time': ('django.db.models.fields.DateField', [], {})
+            'time': ('django.db.models.fields.DateField', [], {'auto_now_add': 'True', 'blank': 'True'})
         },
         u'guestpub.message': {
             'Meta': {'object_name': 'Message'},
