@@ -2,7 +2,7 @@
 from datetime import datetime
 from django.contrib.gis.db import models
 from cms.models import CMSPlugin
-from guestpub.helpers import MessageGateway, get_review
+from guestpub.helpers import MessageGateway, get_comment
 
 import logging
 logger = logging.getLogger(__name__)
@@ -73,12 +73,12 @@ class Pub(models.Model):
 
         super(Pub, self).save(*args, **kwargs) # Call the "real" save() method.
 
-    def _get_review(self):
-        entries = get_review(self.refer_id)
+    def _get_comment(self):
+        entries = get_comment(self.refer_id)
         for entry in entries['comments']:
-            review = entry
-            rev = Review(**review)
-            self.review_set.add(rev)
+            comment = entry
+            rev = Comment(**comment)
+            self.comment_set.add(rev)
 
     def __unicode__(self):
         return u'%s %s' % (self.refer_id, self.title)
@@ -89,10 +89,10 @@ class PubListPlugin(CMSPlugin):
     def __unicode__(self):
         return u'%d' % (self.number)
 
-class Review(models.Model):
+class Comment(models.Model):
     pub = models.ForeignKey("Pub")
     comment_id = models.CharField(max_length=32, blank=True, default='')
-    time = models.DateTimeField(auto_now_add=True)
+    time = models.DateField(auto_now_add=True)
     name = models.CharField(max_length=32, blank=True, default='')
     num_rate = models.IntegerField(blank=True)
     msg = models.CharField(max_length=512, blank=True, default='')
@@ -102,11 +102,10 @@ class Review(models.Model):
         unique_together = ('pub', 'comment_id',)
 
     def save(self, *args, **kwargs):
-        kwargs['force_insert'] = not Review.objects.filter(pub=self.pub, comment_id = self.comment_id).exists()
+        kwargs['force_insert'] = not Comment.objects.filter(pub=self.pub, comment_id = self.comment_id).exists()
         if kwargs['force_insert']:
             # kwargs['update_fields'] = ['time', 'name', 'num_rate', 'msg']
-            super(Review, self).save(*args, **kwargs) # Call the "real" save() method.
-
+            super(Comment, self).save(*args, **kwargs) # Call the "real" save() method.
 
     def __unicode__(self):
         return u'%s %s' % (self.pk, self.name)

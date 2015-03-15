@@ -37,14 +37,15 @@ class MessageGateway():
             return True
         return False
 
-def get_review(daum_id):
+def get_comment(daum_id):
     reqUrl = DAUM_DETAIL_URL % daum_id
     response = urllib2.urlopen(reqUrl).read()
     tree = etree.HTML(response)
 
+    homepage = ""
     if tree.xpath("//p/a") :
         homepage = tree.xpath("//p/a")[0].values()[0]
-    homepage = ""
+
     response = {'comments':[], 'homepage': homepage}
     for cmt_body in tree.xpath('//div[@class="list_cmt"]'):
         comment_id = cmt_body.attrib['data-commentid']
