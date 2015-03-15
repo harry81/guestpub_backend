@@ -35,6 +35,10 @@ class APITest(TestCase):
         response = c.get('/api/pub/13080037/')
         self.assertTrue('13080037' in response.content)
 
+    def test_pub_list_it_should_have_comment_number(self):
+        c = Client()
+        response = c.get('/api/pub/')
+        self.assertTrue('comment_set' in response.content)
 
         
 

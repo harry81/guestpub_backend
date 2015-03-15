@@ -10,6 +10,7 @@ class MessageSerializer(serializers.ModelSerializer):
     def __unicode__(self):
         return u'%s %s' % (self.id, self.sender_tel)
 
+
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
