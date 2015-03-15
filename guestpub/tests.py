@@ -17,9 +17,10 @@ class PubScrapyTest(TestCase):
         mock_urlopen.return_value = mock
 
         response = get_comment('12026394')
-        import ipdb; ipdb.set_trace()
+
         self.assertEqual(response['homepage'], 'http://cafe.naver.com/jejusai', 'Homepage is different')
         self.assertEqual(len(response['comments']), 6)
+        self.assertEqual(response['comments'][3]['time'], '2012-04-01')
 
 
 class GuestpubModelTest(TestCase):

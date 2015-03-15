@@ -92,7 +92,7 @@ class PubListPlugin(CMSPlugin):
 class Comment(models.Model):
     pub = models.ForeignKey("Pub")
     comment_id = models.CharField(max_length=32, blank=True, default='')
-    time = models.DateField(auto_now_add=True)
+    time = models.DateField()
     name = models.CharField(max_length=32, blank=True, default='')
     num_rate = models.IntegerField(blank=True)
     msg = models.CharField(max_length=512, blank=True, default='')
