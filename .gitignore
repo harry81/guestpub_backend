@@ -2,3 +2,4 @@
 dowant/local_settings.py
 static/*
 media/*
+django.log

@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<title>Daum 지도</title>
+
+
+<link href="http://m.daum.net/favicon.ico" rel="shortcut icon">
+
+
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+
+<meta name="format-detection" content="telephone=no" /> 
+
+
+	<link rel="apple-touch-icon-precomposed" href="http://m1.daumcdn.net/svc/image/U03/common_icon/52784FF002447C0002"/>
+
+
+
+<meta property="og:title" content="다음지도">
+<meta property="og:image" content="http://m1.daumcdn.net/localimg/localimages/07/2013/mobileweb/f200x200.png">
+<meta property="og:description" content="사이게스트하우스">
+<meta property="og:site_name" content="Daum 지도">
+<meta property="og:url" content="http://m.map.daum.net/actions/detailInfoView?id=12026394">
+<meta property="og:type" content="website">
+ 
+        <link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U0301/cssjs/mm/newmmap.place.min.201503121454242.css" />
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">var xe = xe || {};</script>
+</head>
+<body data-time="1426308702016" >
+
+
+<div id="daumWrap" class=" os_unknown none unknown version_0">
+             <header id="daumHead" class="only_head">
+
+        
+    <div class="d_head" >
+        <div class="wrap_tit">
+            <h1 class="tit_daum">
+                <a href="http://m.daum.net/" id="daumLogo" class="link_daum"><img src="http://m1.daumcdn.net/svc/image/U03/common_icon/52E1CEEA0379830003" width="40" height="16" alt="Daum" ></a>
+                <a href="/actions/index" id="daumServiceLogo" class="tit_service link_service"><span class="ir_wa">지도</span></a>
+            </h1>
+            <strong class="screen_out">관련 서비스</strong>
+            <a href="/actions/theme/list" class="link_relate">테마지도</a>
+        </div>
+    </div>
+
+</header>
+
+<hr class="hide">        <nav id="mNav" class="menu_gnb">	<h2 class="screen_out">지도 주요메뉴</h2>
+    <a href="javascript:;" class="link_gnb"><span class="ico_comm ico_menu">메뉴 열기/닫기</span></a>
+	<div class="menu_cont">
+		<ul class="list_menu">
+			<li><a href="/actions/index?mode=search" class="link_menu menu_search"><span class="ico_comm ico_search"></span>검색</a></li>
+			<li><a href="/actions/routeView" class="link_menu menu_route"><span class="ico_comm ico_route"></span>길찾기</a></li>
+			<li><a href="/actions/busView" class="link_menu menu_bus"><span class="ico_comm ico_bus"></span>버스</a></li>
+			<li><a href="/actions/trafficRegionView" class="link_menu menu_traffic"><span class="ico_comm ico_traffic_btn"></span>교통정보</a></li>
+            <li><a href="/actions/air" class="link_menu menu_air"><span class="ico_comm ico_air"></span>대기정보</a></li>
+        </ul>
+		<a href="http://blog.daum.net/daummaps/620" target="_blank" class="link_notice"><span class="ico_comm ico_notice"></span>서울시 마을버스 실시간도착정보 오픈</a>
+		<div class="customer_menu">
+            <a href="javascript:;" class="link_g btn_gotoapp"><span class="ico_app">지도앱 아이콘</span>지도앱</a><span class="txt_bar">|</span><a href="javascript:;" class="link_g btn_login">로그인</a><span class="txt_bar">|</span><a href="http://cs.daum.net/m/ask?serviceId=279&categoryId=12192" target="_blank" class="link_g">고객센터</a><span class="txt_bar">|</span><a href="http://blog.daum.net/daummaps/455" target="_blank" class="link_g">지도정보</a>
+		</div>
+	</div>
+</nav>
+        <article id="daumContent" role="main" class="cont_map cont_detail">
+		             <div id="innerSearchLayer">
+    <form id="insideTotalSearchForm" class="inside_sch " role="search">        <fieldset>
+            <legend class="screen_out">지도 내부 검색어 입력폼</legend>
+            <a href="javascript:;" class="link_search link_search_map hide"><span class="ico_comm ico_map"></span>지도<span class="screen_out">로 가기</span></a>
+            <a href="javascript:;" class="link_search link_search_list hide"><span class="ico_comm ico_list"></span>목록<span class="screen_out">으로 가기</span></a>
+            <a href="javascript:;" class="link_search link_search_close hide"><span class="ico_comm ico_close">서제스트 닫기</span></a>
+            <div class="box_search default_search">                <input type="search" id="innerQuery" class="tf_keyword" value="" title="검색어 입력" placeholder="장소, 주소, 전화, 버스, 지하철" name="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <button type="button" class="btn_sch btn_reset"><span class="ico_comm ico_del">검색어 지우기</span></button>
+                <span class="sch_btn">
+                    <button type="submit" class="btn_sch btn_search" id="daumBtnInnerSearch"><span class="ico_comm ico_search">검색</span></button>
+                </span>
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="d_sgt suggest-layer-holder" id="list_inner_suggest">                                                                            </div>
+</div>
+            <div class="recomm_word hide">
+	<strong class="screen_out">추천 검색어</strong>
+	<div class="inner_recomm">
+		<ul class="list_recomm">
+			<li>
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_food"></span>
+					<span class="txt_word" data-logname="restaurant">맛집</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_bus"></span>
+					<span class="txt_word" data-logname="busstop">버스정류장</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_subway"></span>
+					<span class="txt_word" data-logname="metro">지하철역</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_hotel"></span>
+					<span class="txt_word" data-logname="hotel">숙박,펜션</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_bank"></span>
+					<span class="txt_word" data-logname="bank">은행</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_oil"></span>
+					<span class="txt_word" data-logname="gas">주유소</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_coffe"></span>
+					<span class="txt_word" data-logname="coffee">커피전문점</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_store"></span>
+					<span class="txt_word" data-logname="convenience">편의점</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_hospital"></span>
+					<span class="txt_word" data-logname="hospital">병원</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_pharmacy"></span>
+					<span class="txt_word" data-logname="pharmacy">약국</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_sauna"></span>
+					<span class="txt_word" data-logname="bathhouse">찜질방</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_post"></span>
+					<span class="txt_word" data-logname="postoffice">우체국</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_market"></span>
+					<span class="txt_word" data-logname="mart">대형마트</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_realty"></span>
+					<span class="txt_word" data-logname="realestate">부동산</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_storeview"></span>
+					<span class="txt_word" data-logname="storeview">스토어뷰</span>
+				</a>
+			</li>
+			<li >
+				<a href="javascript:;" class="link_recomm">
+					<span class="ico_comm ico_parking"></span>
+					<span class="txt_word" data-logname="parkinglot">주차장</span>
+				</a>
+			</li>
+		</ul>		
+	</div>
+	<a href="javascript:;" class="btn_recomm btn_prevcate"><span class="ico_comm ico_prev">이전</span></a>
+	<a href="javascript:;" class="btn_recomm btn_nextcate"><span class="ico_comm ico_next">다음</span></a>
+</div>
+<div class="history_search hide">
+	<strong class="screen_out">검색 히스토리</strong>
+	<ul class="list_history">
+	</ul>
+	<div class="foot_history">
+		<button type="button" class="btn_close">히스토리 전체삭제</button>
+	</div>
+</div>
+
+                <div class="list_content_wrap">
+                    <div class="map_place">
+	<div class="view_map" id="staticMaps"></div>
+	<div class="view_info">
+		<h3 class="tit_place">
+			사이게스트하우스
+					</h3>
+		<em class="txt_store">게스트하우스</em>
+		<div class="img_place star_rate"><span class="img_place inner_star" style="width:78%;">별점 : </span><span class="screen_out">7.8 점</span></div>
+		<em class="num_rate">7.8</em>
+		<div class="share_wrap" data-id="12026394" data-name="사이게스트하우스">
+			<ul>
+				<li><a href="javascript:;" class="share_icon ico_kakaotalk" data-type="kakaotalk"></a></li>
+                <li><a href="javascript:;" class="share_icon ico_kakaostory" data-type="kakaostory"></a></li>
+                <li><a href="javascript:;" class="share_icon ico_twitter" data-type="twitter"></a></li>
+                <li><a href="javascript:;" class="share_icon ico_facebook" data-type="facebook"></a></li>
+                <li><a href="javascript:;" class="share_icon ico_kakaogroup" data-type="kakaogroup"></a></li>
+                <li><a href="javascript:;" class="share_icon ico_mail" data-type="mail"></a></li>
+                <li><a href="javascript:;" class="share_icon ico_band" data-type="band"></a></li>
+			</ul>
+			<a href="javascript:;" class="share_icon share_fold"></a>
+		</div>
+    	<div id="socialShareContainer"></div>
+	</div>
+</div>
+
+<div class="bundle_link has_roadview">
+	<a href="/actions/detailMapView?id=12026394&q=" class="link_txt link_goto_map"><span class="img_place ico_map"></span>지도</a>
+	<a href="/actions/routeView?exEnc=SLRUUO&eyEnc=EPQMNP&endLoc=%EC%82%AC%EC%9D%B4%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4&ids=%2CP12026394" class="link_txt link_goto_route"><span class="img_place ico_find"></span>길찾기</a>
+            <a href="/actions/detailMapView?id=12026394&rv=on" class="link_txt link_goto_roadview"><span class="img_place ico_roadview"></span>로드뷰</a>
+    	<a href="javascript:;" class="link_txt lst link_goto_app"></span>지도앱<span class="img_place ico_arr"></span></a>
+</div>
+             <strong class="screen_out">추천장소 탭</strong>
+<ul class="tab_place">
+	<li class="on" data-tabname="detailinfo">
+		<a href="javascript:void(0)" class="link_txt">상세정보</a>
+	</li>
+	<li  data-tabname="point">
+		<a href="javascript:void(0)" class="link_txt">평점 <span class="num_count">6</span></a>
+	</li>
+	<li class="lst  " data-tabname="review">
+		<a href="javascript:void(0)" class="link_txt">리뷰 <span class="num_count">6</span></a>
+	</li>
+</ul>
+
+<div class="section_detail place_detailinfo tab_body on">
+	<h4 class="screen_out">상세정보</h4>
+				       
+<div class="detail_place detail_call"> 	<h5 class="tit_g">전화번호</h5>
+	<em class="screen_out">대표번호</em>
+	<a href="tel:064-792-0042" class="pround btn_detail">
+		<span class="inner_g">064-792-0042</span>
+	</a>
+	</div>
+
+
+<div class="detail_place detail_newaddr">
+	<h5 class="tit_g">주소</h5>
+	<p class="txt_g device_unknown">
+                                    <span class="address_text">제주특별자치도 서귀포시 대정읍 송악관광로411번길 59</span>
+                                        <span class="address_jibun">[지번] 제주특별자치도 서귀포시 대정읍 상모리 8-1번지</span>
+                    	</p>
+</div>
+
+
+
+
+
+<div class="detail_place detail_intro" id="introWrap">
+	<h5 class="tit_g">소개글</h5>
+	<p class="txt_g">
+  	 	 		<span>올레10코스 게스트하우스, 인터넷예약, 북카페운영,올레길안내</span>
+ 			</p>
+	</div>
+
+
+
+
+
+
+
+
+<div class="detail_place detail_homepage">
+	<h5 class="tit_g">홈페이지</h5>
+	<p class="txt_g">
+		<a href="http://cafe.naver.com/jejusai" target="_blank" class="link_g_inherit txt_ellipsis">cafe.naver.com/jejusai</a>
+	</p>
+</div>
+
+
+
+
+<div class="detail_place detail_photo photo_comm " id="photoListWrap">
+	<h5 class="tit_g">포토 </h5>
+	<em class="screen_out">총 개 수 : </em><span class="num_photo">81</span>
+    <ul class="list_thumb closed ">
+		        <li data-photoid="M" data-page="0" data-originurl="http://cfile75.uf.daum.net/image/1828C23C4E23DC61195862">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile75.uf.daum.net%2Fimage%2F1828C23C4E23DC61195862" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805523" data-page="0" data-originurl="http://cfile30.uf.tistory.com/image/274FE33B5239A1D9319749">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile30.uf.tistory.com%2Fimage%2F274FE33B5239A1D9319749" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805522" data-page="0" data-originurl="http://cfile22.uf.tistory.com/image/2323483C5239A1D823FEE0">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile22.uf.tistory.com%2Fimage%2F2323483C5239A1D823FEE0" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805521" data-page="0" data-originurl="http://cfile2.uf.tistory.com/image/211C473C5239A1D8287942">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile2.uf.tistory.com%2Fimage%2F211C473C5239A1D8287942" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805520" data-page="0" data-originurl="http://cfile27.uf.tistory.com/image/216F303C5239A1D704F474">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile27.uf.tistory.com%2Fimage%2F216F303C5239A1D704F474" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805519" data-page="0" data-originurl="http://cfile9.uf.tistory.com/image/26534E3C5239A1D60F2AEA">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile9.uf.tistory.com%2Fimage%2F26534E3C5239A1D60F2AEA" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805518" data-page="0" data-originurl="http://cfile4.uf.tistory.com/image/2701D93C5239A1D632D12D">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F2701D93C5239A1D632D12D" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805517" data-page="0" data-originurl="http://cfile26.uf.tistory.com/image/231A5D3C5239A1D528B5DF">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F231A5D3C5239A1D528B5DF" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805516" data-page="0" data-originurl="http://cfile2.uf.tistory.com/image/21134F3C5239A1D42D3BBB">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile2.uf.tistory.com%2Fimage%2F21134F3C5239A1D42D3BBB" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805515" data-page="0" data-originurl="http://cfile6.uf.tistory.com/image/212812395239A1D41D9473">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile6.uf.tistory.com%2Fimage%2F212812395239A1D41D9473" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805514" data-page="0" data-originurl="http://cfile28.uf.tistory.com/image/2430DD395239A1D318B8F7">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile28.uf.tistory.com%2Fimage%2F2430DD395239A1D318B8F7" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+		        <li data-photoid="P26805513" data-page="0" data-originurl="http://cfile26.uf.tistory.com/image/251504395239A1D2271A55">
+			<a href="javascript:;" class="link_thumb">
+                				<img src="http://t1.daumcdn.net/thumb/C110x110.q70/?fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F251504395239A1D2271A55" class="thumb_img" alt="장소관련사진">
+			</a>
+		</li>
+			</ul>
+		<div class="f_r">
+		<a href="javascript:;" class="link_more view_more"><span class="screen_out">포토</span>더보기<span class="img_place"></span></a>
+		<span class="txt_bar hide"> | </span>
+		<a href="javascript:;" class="link_more link_fold hide"><span class="screen_out">포토</span>접기<span class="img_place"></span></a>
+	</div>
+		<a href="javascript:void(0);" class="link_photo hide">
+		<span class="img_place"></span>사진등록
+	</a>
+    <input type="file" id="isUploadCheck" class="screen_out">
+</div>
+
+
+
+										
+
+
+
+
+									
+																							<div class="detail_place">
+	<h5 class="tit_g">결제정보 </h5>
+	<p class="txt_g">신용카드 가능</p>
+</div>
+
+	<div class="detail_place">
+	<h5 class="tit_g">시설정보 </h5>
+		<p class="txt_g">북카페<br></p>
+		<ul class="list_facility">
+		<li 	class="on">
+			<span class="ico_facility ico_parking"></span>
+			<span class="txt_facility"><span class="inner_txt">주차장<br> 있음</span></span>
+		</li>
+		<li 	class="on">
+			<span class="ico_facility ico_wifi"></span>
+			<span class="txt_facility"><span class="inner_txt">WiFi<br> 가능</span></span>
+		</li>
+		<li 	class="on">
+			<span class="ico_facility ico_smoking"></span>
+			<span class="txt_facility"><span class="inner_txt">금연석<br> 있음</span></span>
+		</li>
+		<li 	class="on">
+			<span class="ico_facility ico_toilet"></span>
+			<span class="txt_facility"><span class="inner_txt">화장실<br> 있음</span></span>
+		</li>
+		<li 	class="on">
+			<span class="ico_facility ico_pet"></span>
+			<span class="txt_facility"><span class="inner_txt">애완동물<br> 동반가능</span></span>
+		</li>
+		<li 	class="noData">
+			<span class="ico_facility ico_nursery"></span>
+			<span class="txt_facility"><span class="inner_txt"></span></span>
+		</li>
+		<li 	class="noData">
+			<span class="ico_facility ico_disabled"></span>
+			<span class="txt_facility"><span class="inner_txt"></span></span>
+		</li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+     
+
+		
+	
+
+
+<div class="mfiy_wrap">
+                        <div class="moddttm_wrap single_line">
+                                                    <span class="txt_report">최종 수정 : 2015. 03. 11</span>
+                            </div>
+            <a class="link_report detail_report" href="http://placedb.daum.net/mobile/main.daum?confirmId=12026394" data-reporttype="place">잘못된 정보 신고</a>
+            </div>
+
+</div>
+
+<div class="place_point tab_body ">
+	<h4 class="screen_out">평점</h4>
+	<div class="cmt_tit">
+	<h4 class="tit_cmt">평점 <span class="txt_num">7.8</span>점 <span class="txt_append">(총 6개)</span></h4>	<a href="/actions/placeCommentInsertView?id=12026394" class="pround btn_write"><span class="inner_g">평점 등록</span></a>
+</div>
+
+<strong class="screen_out">전체 평점</strong>
+<div class="list_comm list_point" id="pointList">
+		<div class="list_cmt" data-commentid="903482">
+		<div class="cmt_body">
+			<span class="img_place star_rate"><span class="img_place inner_star" style="width:10%;">별점 : </span></span><em class="num_rate">1</em><span class="screen_out">점</span>
+			<span class="txt_time">2013-08-27</span><span class="txt_bar"> | </span><span class="txt_name">hhh</span>
+			<div class="cont_desc">
+							<span class="txt_desc">노후되고 더러운 시설, 냄새나는 이불, 청소는 제대로 되는지.. </span>
+			</div>
+		</div>
+	</div>
+		<div class="list_cmt" data-commentid="652730">
+		<div class="cmt_body">
+			<span class="img_place star_rate"><span class="img_place inner_star" style="width:100%;">별점 : </span></span><em class="num_rate">10</em><span class="screen_out">점</span>
+			<span class="txt_time">2013-01-02</span><span class="txt_bar"> | </span><span class="txt_name">최운국</span>
+			<div class="cont_desc">
+							<span class="txt_desc">올레10코스, 산방산, 송악산, 마라도 가는 길.... 최고의 쉼터 </span>
+			</div>
+		</div>
+	</div>
+		<div class="list_cmt" data-commentid="424992">
+		<div class="cmt_body">
+			<span class="img_place star_rate"><span class="img_place inner_star" style="width:100%;">별점 : </span></span><em class="num_rate">10</em><span class="screen_out">점</span>
+			<span class="txt_time">2012-05-27</span><span class="txt_bar"> | </span><span class="txt_name">Josee</span>
+			<div class="cont_desc">
+							<span class="txt_desc">송악산과 산방산 사이, 멋진 풍경, 맛있는 커피, 사랑스런 공간.  </span>
+			</div>
+		</div>
+	</div>
+		<div class="list_cmt" data-commentid="392516">
+		<div class="cmt_body">
+			<span class="img_place star_rate"><span class="img_place inner_star" style="width:60%;">별점 : </span></span><em class="num_rate">6</em><span class="screen_out">점</span>
+			<span class="txt_time">2012-04-01</span><span class="txt_bar"> | </span><span class="txt_name">함상훈</span>
+			<div class="cont_desc">
+							<span class="txt_desc">아침식사를 밥으로 먹을수 있다는건 좋지만 화장실이나 샤워실의 시설이 너무 떨어지는 느낌.. 북카페 분위기는 좋음  </span>
+			</div>
+		</div>
+	</div>
+		<div class="list_cmt" data-commentid="309987">
+		<div class="cmt_body">
+			<span class="img_place star_rate"><span class="img_place inner_star" style="width:100%;">별점 : </span></span><em class="num_rate">10</em><span class="screen_out">점</span>
+			<span class="txt_time">2011-11-11</span><span class="txt_bar"> | </span><span class="txt_name">Josee</span>
+			<div class="cont_desc">
+							<span class="txt_desc">사랑하는 10코스, 사랑스런 게스트하우스. </span>
+			</div>
+		</div>
+	</div>
+		<div class="list_cmt" data-commentid="225533">
+		<div class="cmt_body">
+			<span class="img_place star_rate"><span class="img_place inner_star" style="width:100%;">별점 : </span></span><em class="num_rate">10</em><span class="screen_out">점</span>
+			<span class="txt_time">2011-04-18</span><span class="txt_bar"> | </span><span class="txt_name">이소영</span>
+			<div class="cont_desc">
+							<span class="txt_desc">시설도 좋고. 특히 밖에 경치들이 너무너무 좋아요 이모님 아침.저녁도 최고!!!!!!  </span>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</div>
+
+<div class="place_review tab_body ">
+	<h4 class="screen_out">리뷰</h4>
+	<ul class="list_comm list_review" id="reviewList">
+		<li class="fst" data-reviewid="2215080" data-link="http://mtssc.tistory.com/68">
+		<a href="http://mtssc.tistory.com/68" class="link_cont" target="_blank">
+						<img src="http://t1.daumcdn.net/thumb/C70x70.q70/?fname=http%3A%2F%2Fcfile4.uf.tistory.com%2Fimage%2F245310395239A1CF0B117E" width="67" height="53" class="thumb_info" alt="">
+						<span class="cont_info">
+				<strong class="tit_subject">제주도 여행 #4 - 제주 사이게스트하우스</strong>
+				<span class="txt_desc">이전 글 : 2013/09/14 - &#91;한국/제주도&#93; - 제주도 여행 #3 - 송악산, 산방산 제주도 여행 #4 - 제주도 게스트하우스, 제주 사이게스트하우스 송악산을 둘러보고 난 뒤에 오늘 묵을 게스트하우스로 이동했습니다. 오늘 묵을 곳은 송악산 근처에 있는 사이게스트하우스였는데요. 도미토리 1박에 20,000원(조식 포함)이구요. 인터넷으로 미리 예약을 하고 갔습니다. 송악산(송악공원)에서 걸어서 15~20분 정도 걸으면 나온답니다. 게스트하우스 주변이 참 조용했어요. 시끌벅적한 분위기를 좋아하시는 분들은 별로 좋아하시지 않겠지만, 저처럼 조용한 분위기를 좋아하는 분들에게는 딱이라고 생각합니다. ㅎㅎ 사이게스트하우스에서는 멀리 산방산이 보입니다. Stay with Coffee, 사이게스트하우스에서는 북카페도 운영하고 있었습니다. 그래서 저렇게 써두었나봐요. ㅎㅎ (오른쪽에 보이는 건물은 사이게스트하우스와는 상관이 없어요. ㅋㅋㅋ) 도미토리 8인실, 남자방입니다. 여기 말고 방이 하나 더 있었어요. 최성수기가 지난 8월 마지막 주에 다닌 여행이라 제주 여행 전체 기간 중에서 관광객들로 북적인 곳은 별로 없었는데요. 이곳 사이게스트하우스에도 손님이 거의 없었습니다. ㅎㅎ 여자 방은 모르겠지만, 남자방에는 저와 친구 포함 5명밖에 없었어요. ㅋㅋ 1층에 방이 있고, 2층에는 카페가 있었습니다. 사람들이 많으면 활발하고 재미난 분위기라고 하는데요. 이 날은 사람이 없어서 조용했습니다. ㅎㅎ 이건 다음 날 아침에 찍은 사진입니다. 아침에 무료로 조식을 제공해주는데요. 원래는 밥+국+반찬이 제공이 되는데요. 무더운 여름 동안에는 찜통 주방에서 고생하는 스텝을 위해 비교적 간편한 샌드위치와 스프로 메뉴를 바꿨다고 합니다. 저는 뭐든 좋아하기 때문에 뭐가 나와도 특별히 상관이 없었지요 ^^;; 카페 메뉴판이에요. 커피, 에이드 등의 음료와 간단한 식사류도 파는 것 같더라구요. 사이게스트하우스의 조식입니다. 샌드위치와 스프, 그리고 제주의 음료(!!) 감귤 주스입니다. ㅋㅋ 샌드위치는 물론이고 스프도 직접 만들었다고 하셨는데요. 정말 맛있었습니다. ㅎㅎ 이런 풍경을 보면서 먹는 아침 식사였기 때문에 더 맛있었는지도 모르겠습니다. ^^;; 풍경이 너무 아름다웠습니다. ㅎㅎ 사실 사이게스트하우스는 침대나 화장실 등의 시설이 좋은 편은 아니었어요. 하지만 주변 풍경 만큼은 정말 최고였답니다. 제주도의 아름다운 경치를 느낄 수 있는 곳이었어요. 사이게스트하우스와 모슬포항 사이를 지나가는 마을버스 시간표에요. 하루에 몇 대 없지요. ㅠㅠ 모슬포항에서 게스트하우스로 전화를 하면 픽업 해주십니다. 저희는 들어올 때는 문제가 없었는데, 나갈 때는 버스가 없어서 픽업 서비스를 이용해서 모슬포항으로 나갔습니다. 픽업비는 1인당 1,000원이에요~ 마지막 사진은 사이게스트하우스를 지키는 개!!!!!! 엄청 순둥이었어요. ㅋㅋㅋㅋ 송악산 근처의 게스트하우스를 찾는 분들께 좋은 정보가 되었으면 좋겠네요 ^^ </span>
+				<span class="txt_num">2013-09-18</span><span class="txt_bar"> | </span><span class="txt_name">세계를 향해 나를 열다</span>
+			</span>
+		</a>
+	</li>
+		<li  data-reviewid="1493789" data-link="http://findabed.tistory.com/10">
+		<a href="http://findabed.tistory.com/10" class="link_cont" target="_blank">
+						<img src="http://t1.daumcdn.net/thumb/C70x70.q70/?fname=http%3A%2F%2Fcfile3.uf.tistory.com%2Fimage%2F1937FC4D5031623122E7F9" width="67" height="53" class="thumb_info" alt="">
+						<span class="cont_info">
+				<strong class="tit_subject">사이게스트하우스</strong>
+				<span class="txt_desc">와인, 커피 그리고 책. 그리고 해양스포츠를 즐길 수 있는 리조트같은 게스트하우스, 사이. 시나리오작가이자 심산스쿨의 원장이신 심산 씨가 기증한 책들이 2층에 북카페로 남아있는 곳. 남들은 돈을 번다는 얘기를 하지만 정작 주인장들은 뭍으로 적자를 때우러 돈벌이 나가는 형국. 특히 여성도미토리의 벽화가 인상적인 사이게스트하우스는 한번쯤 푹 쉬다가고픈 분들에게 추천하고 싶은 장소이다. 이용요금 : 도미토리 20,000원/박(가정식 백반 제공) 예약문의 : 064-792-0042, 010-4751-0042 카페 : http://cafe.naver.com/jejusai </span>
+				<span class="txt_num">2012-08-20</span><span class="txt_bar"> | </span><span class="txt_name">제주 여행자를 위한 게스트하우스</span>
+			</span>
+		</a>
+	</li>
+		<li  data-reviewid="1062965" data-link="http://blog.daum.net/jejumonttak/326">
+		<a href="http://blog.daum.net/jejumonttak/326" class="link_cont" target="_blank">
+						<img src="http://t1.daumcdn.net/thumb/C70x70.q70/?fname=http%3A%2F%2Fcfile219.uf.daum.net%2Fimage%2F1724874D4F2B43903814C2" width="67" height="53" class="thumb_info" alt="">
+						<span class="cont_info">
+				<strong class="tit_subject">[머물고 싶은 제주의 집] 사이게스트하우스  </strong>
+				<span class="txt_desc">&#91;머물고 싶은 제주의 집&#93; 사이게스트하우스 그대, 파도소리 정겨운 제주도의 푸른 밤을 꿈꾸신다면2011년 09월 01일 (목) 10:42:09오희삼 witseorum@leisuretimes.co.kr 송악산에서 마라도가 지척인 것처럼, '사이'에서는 모슬포 거센 바다의 싱싱하고 등 푸른 방어의 파닥거림이 파도소리처럼 들린다. 손에 잡힐 듯 바다 위에 배처럼 떠 있는 형제섬과 화산이 만들어놓은 거대한 종이 하늘금을 그리는 산방산이 모두 사이와 친구사이처럼 가깝다. 마라도 선착장 인근의 산이수동 가로등 불빛들이 하나 둘 밤바다 집어등처럼 불을 밝히고 귀밑머리에 '쏴아 쏴아,,처얼썩 처얼썩' 거리며 검은 현무암을 간질이는 파도의 재잘거림이 들려올 때 그대는 비로소 '제주도의 푸른 밤 그 불빛 아래' 선다. 드라마 '인생은 아름다워' 메인 세트장 인근의 '사이'는 펜션을 겸한 게스트하우스다. 용머리해안에서 바닷가를 따라 송악산으로 이어지는 올레 10코스 가운데쯤이다. 한 번 쯤 티브이 광고에서 보았음직한 환상적인 드라이브 코스로도 알려진 사계해안도로는 마라도 선착장과 송악산, 발자국 화석, 사계 바다 등으로 널리 알려진 제주 냄새 물씬 풍기는 어촌이다. 해서 산이수동 선착장을 중심으로 먹음직스러운 갈치와 고등어 등을 파는 식당과 펜션들이 들어서 있어 작은 관광촌을 이룬다. 사이는 그 중심에 있다. 숙소로서의 사이 그 자체도 그렇지만 이곳은 2층에 있는 북카페로 더욱 더 올레꾼들에게 명성이 자자하다. 바다와 산방산을 바라보는 카페에서 로스터가 직접 뽑아주는 커피와 여행에 필요한 정보를 얻을 수 있는 점이 여행자들에겐 자못 매력적인 셈이다. 비 오는 날 조용한 음악이 흐르는 카페에서 빈 바다를 바라보며 책장을 넘기는 맛도 여행지에서 만나는 색다른 여유로움이 아닐까 싶다. 계절의 변화에 맞추어 펜션에서 주도하는 '사이 작은 음악회'도 이곳의 자랑이다. 게스트하우스 인근에는 마라도가 손에 잡힐 듯 해안가에 솟아 있는 송악산과 사람 발자국 화석지, 모래빛 고운 사계바다 등 관광명소가 있어 산책을 즐기기에도 손색이 없다. 스킨 스쿠버와 제주의 속살 트레킹 등 투어프로그램도 진행되어 처음 제주를 찾는 이들에게는 실속 있는 제주 여행의 베이스캠프라고 할 수 있다. 특히 제주 최남단섬 마라도와 청보리축제가 열리는 가파도가 지척에 있어 섬 속의 섬 여행을 꿈꾸는 이들에겐 최적의 보금자리다. 바닷가 절벽 위에 봉긋이 솟아오른 송악산까지는 올레길 조성 이전에도 사람들의 발길이 잦았던 곳이다. 특히 사진을 전문으로 찍는 사진가에서 조용한 산책을 즐기는 이들에게 송악산 정상은 제주의 비밀스러운 여행지 중 하나였다. 송악산의 본디 이름은 절울이다. '절'은 파도를 뜻하는 제주어로 해석하자면, '파도가 우는 동산'이란 뜻이다. 해안가에 불쑥 솟아오른 절벽으로 부딪치는 파도소리가 오름 정상의 깊고 깊은 분화구를 휘돌아나오며 나오는 소리가 마치 파도가 우는 것처럼 들려서 이리 고운 이름을 얻었다. ※이용정보 - 1인용 도미토리와 가족을 위한 별도의 펜션형 방이 별도로 구비되어 있다. 1인용 도미토리는 아침 식사(가정식 백반)를 포함한 가격이 20,000원이고 3층의 독실은 60,000원이다. - 2층의 북카페 겸 '스테이 위드 커피'(stay with coffee)숍에서는 자신이 직접 내린 커피를 마실 수 있는 핸드드립 체험교실이 열리고 매월 방문객이 남기고 간 명함 중 3장을 추첨하여 커피를 보내주는 깜짝이벤트도 진행된다. - 사이게스트하우스 인근 올레길 픽업 서비스가 이루어진다. 10, 11코스는 1,000원, 9, 12, 13코스는 2,000원, 14, 14-1코스는 3,000원이다. ※찾아가는 길 - 제주공항이나 여객터미널에서 제주시외버스터미널로 이동 후 모슬포행 시외버스를 탄다. 모슬포에서 게스트하우스까지는 픽업이 가능하다. - 모슬콜택시(064-794-5200)를 이용할 경우 소요비용 20,000원 - 네비게이션 검색 시에는 주소검색창에서 대정읍 상모리 8-1 입력 문의 : 사이게스트하우스(064-792-0042) 홈페이지 : cafe.naver.com/jejusai/ 출처 : http://www.leisuretimes.co.kr/news/articleView.html?idxno=547 http://www.jejumonttak.com/bbs/board.php?bo_table=tourinfo8&wr_id=5&page=0&sca=&sfl=&stx=&sst=&sod=&spt=0&page=0 </span>
+				<span class="txt_num">2012-02-03</span><span class="txt_bar"> | </span><span class="txt_name">제주몬딱여행</span>
+			</span>
+		</a>
+	</li>
+		<li  data-reviewid="2371237" data-link="http://blog.naver.com/PostView.nhn?blogId=kimhanna0518&logNo=120128024953">
+		<a href="http://blog.naver.com/PostView.nhn?blogId=kimhanna0518&logNo=120128024953" class="link_cont" target="_blank">
+						<span class="cont_info">
+				<strong class="tit_subject">제주 서귀포 사이게스트하우스....북카페...</strong>
+				<span class="txt_desc">이곳은 사이 북카페...사이 게스트하우스다....커피는 공정무역을 통해들어온이디오피아 이가체프 코케...쿠키는 이곳에서 직접구운 로키로드 쿠키다...견과류와 마쉬멜로우 쵸코가 들어가 있다...빵을 사회적 기업일 평화의 마을에서 직접만든 더블토스트....커피도 빵도 너무 맛있어요...</span>
+				<span class="txt_num">2011-04-16</span><span class="txt_bar"> | </span><span class="txt_name">맑은하늘</span>
+			</span>
+		</a>
+	</li>
+		<li  data-reviewid="519728" data-link="http://rayh.tistory.com/126">
+		<a href="http://rayh.tistory.com/126" class="link_cont" target="_blank">
+						<img src="http://t1.daumcdn.net/thumb/C70x70.q70/?fname=http%3A%2F%2Fcfile109.uf.daum.net%2Fimage%2F206CF14CB734D20B628B07" width="67" height="53" class="thumb_info" alt="">
+						<span class="cont_info">
+				<strong class="tit_subject">[제주] 사이게스트하우스</strong>
+				<span class="txt_desc">제주에 올레길이 유명해지면서 게스트 하우스들이 많이 늘어나고 있다.잠은 집에서 자는 것이 편하기 때문에 굳이 게스트 하우스를 갈 일은 없지만 커피집이 있다면 얘기가 달라진다.사이게스트 하우스는 이담님 블로그(http://blog.daum.net/inmymind)에서 소개(?)되어 찾아가게 되었다.도착해보니 건물의 2층에 북카페가 있었다.1층문을 열고 들어가</span>
+				<span class="txt_num">2011-03-09</span><span class="txt_bar"> | </span><span class="txt_name">Ray's weblog</span>
+			</span>
+		</a>
+	</li>
+		<li  data-reviewid="432926" data-link="http://blog.daum.net/heroyw1/12876429">
+		<a href="http://blog.daum.net/heroyw1/12876429" class="link_cont" target="_blank">
+						<img src="http://t1.daumcdn.net/thumb/C70x70.q70/?fname=http%3A%2F%2Fcfile213.uf.daum.net%2Fimage%2F166BC3034CF256EC379CD2" width="67" height="53" class="thumb_info" alt="">
+						<span class="cont_info">
+				<strong class="tit_subject">Stay With Coffee[사이 게스트하우스]</strong>
+				<span class="txt_desc">산방산이 보이고 송악산이 바로 옆인 이곳, 유명한 드라마 촬영지와 아름다운 풍경으로 사람들이 많이 찾는 제주의 가장 아래끝에는 쉽게 보이지 않는 까페가 하나 있습니다. 잘 찾아보아야 보입니다. 사실 오픈한지도 얼마 되지 않아 그렇기도 하지만 게스트하우스의 2층을 개조해 만든 까페라 더욱 찾기가 힘든지도 모르겠습니다. 마라도 유람선 선착장 앞에서 바닷길을 따라 산방산이 보이는 방향으로 조금 가다보면 그닥 특징이 없어보이는 3층건물에 오래되지 않은 듯한 간판이 하나 보입니다. 자세히 보면 아래와 같죠. 건물모양이 이채롭지도 않고 주변에 듬성듬성 서있는 아파트나 다른 건물들과 함께 있으니 더더욱 잘 보이지 않습니다. 하지만 들어가보면 사뭇 다른 분위기를 느낍니다. 게스트하우스인지라 정원도 있고 바베큐 그릴도 보이는데 까페와 연관해서는 어울리기도 하고 어울리지 않기도 한 풍경.. 하지만 이곳은 제주의 바닷가임은 확실합니다. 소철나무가 보이고 멀리 산방산이 보이는 곳.. 사실 들어가기 전까지 까페가 맞나 하는 생각이 들었지만, 들어가면 까페 맞습니다. 2층이 북까페임은 확실하죠? 입구엔 아름다운 그림도 있구요.. 1층의 게스트하우스를 지나 2층으로 올라갑니다. 1층 현관을 들어가 2층으로 들어가는 데에는 약간의 삭막함을 감안해야 합니다. 자 이제 서서히 까페만의 분위기가 느껴집니다. 픽업서비스와 음악회도 있군요. 문을 열고 들어가니 책과 원두판매 안내판이 이곳이 북까페임을 증명하네요. 자전거도 대여합니다. 까페 내부의 전경입니다. 우리 민욱이는 조연으로 출연했구요. 반대편을 보면 책이 가득한 공간입니다. 책을 읽고 다시 꽂아놓기만 하면 되죠. 드립커피를 다루시기에 로스터기도 중비되어있구요. 더치커피도 하십니다. 아담한 커피잔도 진열이 되어있네요. 커피를 주문하면 저 잔들 중에서 하나를 골라 커피를 내어주십니다. 실내가 비교적 넓고 아늑한 감이 없어 나무를 때는 난로가 반갑습니다. 어떤 분은 이곳에 자리를 잡고 앉아 책을 읽고 계셨군요. 스킨스쿠버로서도 활동하시나 봅니다. open water라면 가장 기본이 되는 자격증인데.. 형제섬이 가까이 보입니다. 산방산과 구름을 걸친 한라산도 보이구요. 구경을 했으면 커피를 주문해야죠. 콜롬비아와 이디오피아 이가체프 코케를 주문했습니다. 언제나 느끼는 것이지만 사람의 손길이란 음식이나 음료의 맛을 좌우합니다. 드립커피를 알게되면서 심혈을 기울여 자신이 느끼는 최상의 방법으로 커피를 내리는 주인장들의 모습에서 열정과 진지함을 볼 수 있습니다. 그렇게 두 잔의 드립커피를 맛봅니다. 맛있습니다. 커피가 맛있으니 포스팅을 안할 수가 없죠. 이곳은 올레길 10코스의 중간에 있습니다. 많은 사람들이 바닷가길을 따라 터벅터벅 지나가는 모습을 어렵지 않게 볼 수 있죠. 난로의 모닥불이 다시 타오르며 훈훈함이 더해집니다. 이곳은 까페의 아늑함이나 포근함은 그닥 느껴지지 않습니다. 애초에 까페목적의 건물도 아니었거니와 무엇인가를 채워넣기엔 너무 넓직한 공간과 창문이 조금은 춥고 너무 밝은 느낌을 주고 있죠. 하지만, 올레길을 걷다가 이곳의 게스트하우스에 머물며 쉼과 여유의 시간을 까페라는 공간에서 즐길 수 있다는 것은 하나의 특색있는 경험이 될 수도 있을 듯 합니다. 게다가 이 집의 드립커피는 맛이 좋습니다. 주인장님은 원두를 조금 특색있게 선별하시는 듯 했습니다. 로스팅의 특징과 드립의 맛은 개인적으로 만족스러운 수준이었달까요? 아쉽지 않았습니다. 산방산을 거쳐 송악산을 둘러보고 형제섬과 그 풍광을 만족스러이 감상할 수 있는 언덕을 거쳐 이 곳에서 드립커피 한 잔이면 반나절의 만족스러움으로 충분하지 않을까 합니다. </span>
+				<span class="txt_num">2010-12-14</span><span class="txt_bar"> | </span><span class="txt_name">칼을 벼리다.</span>
+			</span>
+		</a>
+	</li>
+	</ul>
+
+</div>
+                </div>
+    </article>
+            <div class="dimmed_layer" style="height:480px"></div>
+        <div class="footer_wrap hide" id="footerWrap">
+    
+
+		<div id="hottrendsContainer"></div>
+
+		<div id="daumAd"></div>
+	<script type="text/javascript">
+	var daum_adam_vars = {
+		client : '12dbZ1MT13319d8b021',
+		position : 'MIDDLE',
+		bannerDivId : 'daumAd'
+//		mraidDelay: 20
+	};
+    (function(c,d,e,f,g,h,i){(function(a,b){d.addEventListener?c.addEventListener(a,b,!!0):c.attachEvent("on"+a,b)})('load',function(){h=d.createElement(e);i=d.getElementsByTagName(e)[0];h.async=1;h.src=f;i.parentNode.insertBefore(h,i);h.onload=h.onreadystatechange=function(){(typeof(g)+'')[0]=='f'&&(!this.readyState||this.readyState=='complete')?(g()):0}},false)})(window,document,'script','http://m1.daumcdn.net/adtc/js/mobilead.js');
+	</script>
+
+	<div id="footContent" class="foot_content" lang="ko" data-isdaumapp="false"></div>
+	
+	<div id="daumFoot" role="contentinfo">
+	 	<ul>
+			<li><a href="http://m.daum.net/?t__nil_footer=daum">Daum</a></li>
+            <li id="daumMinidaum">
+            </li>
+			<li><a href="javascript:;" class="off">PC화면</a></li>			<li><a href="http://m.daum.net/site.daum?t__nil_footer=sitemap">전체보기</a></li>
+		</ul>
+	
+		<address>
+			<a href="http://m.daumkakao.com" class="link_daum">&copy; Daum Kakao Corp.</a>
+		</address>
+	</div>
+	
+		<script type="text/javascript" src="http://go.daum.net/bin/minidaum.cgi?minidaum_mobile=y&js_url=minidaumMobile2011&viewport=320&tracker=off" charset="euc-kr"></script>
+	</div>
+
+</div>
+<script type="text/javascript">
+    var xe = xe || {};
+    xe.placeData = {
+        posX : 334892,
+        posY : -77025,
+        confirmid : '12026394',
+        stationid : null,
+        cpage : 1, //현재 페이지
+        totalPointCnt : '6',
+        totalReviewCnt : '6',
+        useridEnc : '',
+        tiaraSuffix : '_mweb',
+        subwayType : 'N',
+        phoneNum : '064-792-0042',
+        address : '제주특별자치도 서귀포시 대정읍 상모리 8-1번지',
+        streetAddress : '제주특별자치도 서귀포시 대정읍 송악관광로411번길 59',
+        placeName : '사이게스트하우스',
+        subwayName : '',
+        subwayTypeName : '',         panoId : '1032963486',
+        pan : '-140.834',
+        wPhotoX : '335069',
+        wPhotoY : '-76998',
+        tilt : '-7',
+        svid : '',
+        routeFrom : 'end',
+        cateid : '1006',
+        yellowid : ''
+    };
+</script>
+<script type="text/javascript">
+xe.mmapContextPath = '';
+xe.mrankType = '';
+xe.startMapView = false;
+xe.startRoadview = false;
+xe.needNowPosition = false;
+xe.extService = false;
+xe.hideFooter = false;
+xe.isErrorPage = false;
+xe.pageName = 'detailInfoView';
+xe.pageCategory = 'place';
+xe.isDaumMapApp = false;
+xe.isDebug = false;
+xe.isSmallMap = false;
+
+
+var _tiq = 'undefined' !== typeof _tiq ? _tiq : []; // Global Variables
+
+_tiq.push(['__trackPageview']);
+</script>
+<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/v3.js"></script>
+
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/mm/newmmap.min.201503121454242.js"></script>
+</body>
+</html>
