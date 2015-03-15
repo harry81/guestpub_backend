@@ -23,7 +23,7 @@ admin.site.register(Pub, PubAdmin)
 
 
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('username', 'sender_tel', 'receiver_tel', 'result','message')
+    list_display = ('username', 'sender_tel', 'receiver_tel', 'result','message', 'created')
 
 admin.site.register(Message, MessageAdmin)
 

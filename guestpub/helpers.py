@@ -22,7 +22,7 @@ CommentEntry = namedtuple('CommentEntry', ['comment_id', 'time', 'name', 'num_ra
 class MessageGateway():
     def send(self, sender, receiver, message):
         if not config.ENABLE_SEND_SMS:
-            return False
+            return False, 'ENABLE_SEND_SMS is disabled.'
 
         c = httplib.HTTPSConnection(settings.BLUEHOUSE_URL)
         value = {
@@ -34,8 +34,8 @@ class MessageGateway():
         c.request("POST", path, data, headers)
         res = c.getresponse()
         if res.status == 200:
-            return True
-        return False
+            return True, 'Success'
+        return False,  'Success'
 
 def get_comment(daum_id):
     reqUrl = DAUM_DETAIL_URL % daum_id

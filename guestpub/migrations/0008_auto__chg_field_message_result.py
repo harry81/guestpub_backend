@@ -9,13 +9,13 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
 
-        # Changing field 'Comment.time'
-        db.alter_column(u'guestpub_comment', 'time', self.gf('django.db.models.fields.DateField')(auto_now_add=True))
+        # Changing field 'Message.result'
+        db.alter_column(u'guestpub_message', 'result', self.gf('django.db.models.fields.CharField')(max_length=256))
 
     def backwards(self, orm):
 
-        # Changing field 'Comment.time'
-        db.alter_column(u'guestpub_comment', 'time', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True))
+        # Changing field 'Message.result'
+        db.alter_column(u'guestpub_message', 'result', self.gf('django.db.models.fields.BooleanField')())
 
     models = {
         'cms.cmsplugin': {
@@ -39,17 +39,6 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '255', 'db_index': 'True'})
         },
-        u'guestpub.comment': {
-            'Meta': {'unique_together': "(('pub', 'comment_id'),)", 'object_name': 'Comment'},
-            'comment_id': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '32', 'blank': 'True'}),
-            'created_at': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'msg': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '512', 'blank': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '32', 'blank': 'True'}),
-            'num_rate': ('django.db.models.fields.IntegerField', [], {'blank': 'True'}),
-            'pub': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['guestpub.Pub']"}),
-            'time': ('django.db.models.fields.DateField', [], {'auto_now_add': 'True', 'blank': 'True'})
-        },
         u'guestpub.message': {
             'Meta': {'object_name': 'Message'},
             'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
@@ -60,7 +49,7 @@ class Migration(SchemaMigration):
             'num_men': ('django.db.models.fields.IntegerField', [], {'default': '0', 'blank': 'True'}),
             'num_women': ('django.db.models.fields.IntegerField', [], {'default': '0', 'blank': 'True'}),
             'receiver_tel': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '20', 'blank': 'True'}),
-            'result': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'result': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '256', 'blank': 'True'}),
             'sender_tel': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '20', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '20', 'blank': 'True'})
         },

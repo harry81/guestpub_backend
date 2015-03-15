@@ -15,7 +15,7 @@ class Message(models.Model):
     receiver_tel = models.CharField(max_length=20, blank=True, default='')
     username = models.CharField(max_length=20, blank=True, default='')
     day = models.CharField(max_length=20, blank=True, default='')
-    result = models.BooleanField(default=False)
+    result = models.CharField(max_length=256, blank=True, default='')
     num_men = models.IntegerField(default=0, blank=True)
     num_women= models.IntegerField(default=0, blank=True)
     num_children= models.IntegerField(default=0, blank=True)
@@ -38,7 +38,7 @@ class Message(models.Model):
         self.message = u"안녕하세요 {day}에 남{num_men}명 여{num_women} 어린이 {num_children} 숙박 가능한가요?".format(**self.__dict__)
         msgGate = MessageGateway()
         #self.result = msgGate.send(self.sender_tel, [self.receiver_tel,], self.message)
-        self.result = msgGate.send('01064117846', ['01064117846',], self.message)
+        rlt, self.result = msgGate.send('01064117846', ['01064117846',], self.message)
         super(Message, self).save(*args, **kwargs)
 
 
