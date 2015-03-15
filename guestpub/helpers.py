@@ -16,7 +16,7 @@ headers = {
 class MessageGateway():
     def send(self, sender, receiver, message):
         if not config.ENABLE_SEND_SMS:
-            return False
+            return False, 'ENABLE_SEND_SMS is disabled.'
 
         c = httplib.HTTPSConnection(settings.BLUEHOUSE_URL)
         value = {
@@ -28,6 +28,6 @@ class MessageGateway():
         c.request("POST", path, data, headers)
         res = c.getresponse()
         if res.status == 200:
-            return True
-        return False
+            return True, 'Success'
+        return False,  'Success'
 
