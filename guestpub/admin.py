@@ -6,18 +6,24 @@ from guestpub.models import Pub, Message, Comment
 class CommentInline(admin.TabularInline):
     model = Comment
 
+def get_comment(modeladmin, request, queryset):
+    for pub in queryset:
+        pub._get_comment()
+get_comment.short_description = "Mark selected stories as published"
+
 
 class PubAdmin(admin.ModelAdmin):
     list_display = ('title', 'show_comment_number', 'phone','show_pubimage','created_at', 'modified_at' )
     inlines = [CommentInline, ]
+    actions = [get_comment]
 
     def show_pubimage(self, obj):
         return '<a href="%s"><img src="%s" width="200px"/></a>' % (obj.placeurl, obj.imageurl)
 
     def show_comment_number(self, obj):
         return '%d' % (obj.comment_set.all().count())
-
     show_pubimage.allow_tags = True
+
 
 admin.site.register(Pub, PubAdmin)
 

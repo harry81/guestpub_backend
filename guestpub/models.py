@@ -69,7 +69,7 @@ class Pub(models.Model):
     def save(self, *args, **kwargs):
         kwargs['force_insert'] = not Pub.objects.filter(refer_id=self.refer_id).exists()
         if not kwargs['force_insert']:
-            kwargs['update_fields'] = ['title', 'phone','address','imageUrl', 'category']
+            kwargs['update_fields'] = ['title', 'phone','address','imageurl', 'category']
 
         super(Pub, self).save(*args, **kwargs) # Call the "real" save() method.
 
