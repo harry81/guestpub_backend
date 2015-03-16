@@ -62,7 +62,8 @@ class Pub(models.Model):
     point = models.PointField(blank=True, default="POINT(0 0)")
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-
+    objects = models.GeoManager()
+    
     class Meta:
         ordering = ['-imageurl']
 

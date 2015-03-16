@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import generics
+from rest_framework_gis.filters import InBBoxFilter
 from guestpub.serializers import PubSerializer, MessageSerializer, CommentSerializer
 from guestpub.models import Pub, Message, Comment
 
@@ -12,6 +13,8 @@ class PubList(generics.ListCreateAPIView):
     permission_classes = ()
     queryset = Pub.objects.all()
     serializer_class = PubSerializer
+    bbox_filter_field = 'point'
+    filter_backends = (InBBoxFilter, )
 
 
 class PubDetail(generics.RetrieveUpdateDestroyAPIView):

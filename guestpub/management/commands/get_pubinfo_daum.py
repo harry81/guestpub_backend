@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         urls  = [u'https://apis.daum.net/local/v1/search/keyword.json?page=%s&query=제주게스트하우스&apikey=9f68e425f40e190b407745eb855619262ce0b2cc&image=only&location=127.0017531,37.5395269'
-                 % page for page in range(1, 5)]
+                 % page for page in range(1, 4)]
         for url in urls:
             response = urllib2.urlopen(url.encode('utf-8'))
             data = response.read()

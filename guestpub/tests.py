@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 from django.test import TestCase
 from django.test import Client
 from django.contrib.admin.options import (
@@ -46,6 +47,17 @@ class APITest(TestCase):
         response = c.get('/api/pub/')
         self.assertTrue('comment_set' in response.content)
 
+    def test_pub_list_it_should_respect_boundary(self):
+        c = Client()
+        response = c.get('/api/pub/?in_bbox=126.01831,32.682825,127.072998,34.052184')
+        data = response.content
+        output = json.loads(data)
+        self.assertEqual(  len(output['results']), 10 )
+
+        response = c.get('/api/pub/?in_bbox=126.499649,33.37794,126.763321,33.719579')
+        data = response.content
+        output = json.loads(data)
+        self.assertEqual(  len(output['results']), 3 )
         
 
 class ModelTest(TestCase):
@@ -55,17 +67,3 @@ class ModelTest(TestCase):
         pub = Pub.objects.all()[0]
         pub._get_comment()
         self.assertEqual(Pub.objects.all().count(), 15, u'숙소의 개수가 15개 아님.')
-
-
-class ModelAdminTests(TestCase):
-
-    def setUp(self):
-        self.site = AdminSite()
-
-    # form/fields/fieldsets interaction ##############################
-
-    def test_default_fields(self):
-        pub_admin = PubAdmin(Pub, AdminSite())
-        import ipdb; ipdb.set_trace()
-        self.assertTrue(pub_admin.get_bar())
-        
