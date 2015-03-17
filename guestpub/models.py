@@ -35,11 +35,22 @@ class Message(models.Model):
         return u'%s %s' % (self.pk, self.message)
 
     def save(self, *args, **kwargs):
-        self.message = u"안녕하세요 {day}에 남{num_men}명 여{num_women} 어린이 {num_children} 숙박 가능한가요?".format(**self.__dict__)
+        self.message = self._write_message(**self.__dict__)
         msgGate = MessageGateway()
         #self.result = msgGate.send(self.sender_tel, [self.receiver_tel,], self.message)
-        rlt, self.result = msgGate.send('01064117846', ['01064117846',], self.message)
+        rlt, self.result = msgGate.send(self.sender_tel, ['01064117846',], self.message)
         super(Message, self).save(*args, **kwargs)
+
+    def _write_message(self, **info):
+        msg = "[guestpub] 안녕하세요 {day}에 ".format(**info)
+        if info['num_men'] > 0:
+            msg+="남{num_men}명 ".format(**info)
+        if info['num_women'] > 0:
+            msg+="여{num_women}명 ".format(**info)
+        if info['num_children'] > 0:
+            msg+="어린이 {num_children}명 ".format(**info)
+        msg+="숙박하려고 합니다. 가능한가요?"
+        return msg.decode('utf-8')
 
 
 class Pub(models.Model):
